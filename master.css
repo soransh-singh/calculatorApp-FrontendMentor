@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Spartan', sans-serif;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  background: red;
+  max-width: 450px;
+  margin: auto;
+}
+
+.head{
+  margin: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc{
+  font-size: 32px;
+}
+
+.theme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: yellow;
+  font-size: 12px;
+}
+
+.toggle{
+  width: 50px;
+  height: 20px;
+  background-color: green;
+
+}
+
+.output{
+  font-weight: 700;
+  font-size: 2rem;
+  height: 4rem;
+  margin: .5rem;
+  background: yellow;
+}
+
+.keypad{
+  padding: .5rem;
+  margin: .5rem;
+  background: yellow;
+  font-weight: 700;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.btn{
+  padding: .5rem;
+  background-color: white;
+  margin: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+}
+
+.reset{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.equal{
+  grid-column-start: 3;
+  grid-column-end: 5;
+}

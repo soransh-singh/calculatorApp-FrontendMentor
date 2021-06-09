@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./master.css">
+
+  <script src="./main.js" charset="utf-8"></script>
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,11 +20,48 @@
   </style>
 </head>
 <body>
+  <main>
+    <div class="head">
+      <div class="calc">calc</div>
+      <div class="theme">
+        <p>THEME</p>
 
+        <div class="toggle">
+          <div class="toggle-switch"></div>
+        </div>
 
-  
+      </div>
+    </div>
+
+    <div class="output"></div>
+    <div class="keypad">
+      <div class="btn">7</div>
+      <div class="btn">8</div>
+      <div class="btn">9</div>
+      <div class="btn del">DEL</div>
+
+      <div class="btn">4</div>
+      <div class="btn">5</div>
+      <div class="btn">6</div>
+      <div class="btn">+</div>
+
+      <div class="btn">1</div>
+      <div class="btn">2</div>
+      <div class="btn">3</div>
+      <div class="btn">-</div>
+
+      <div class="btn">.</div>
+      <div class="btn">0</div>
+      <div class="btn">/</div>
+      <div class="btn">x</div>
+
+      <div class="btn reset">RESET</div>
+      <div class="btn equal">=</div>
+    </div>
+  </main>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
