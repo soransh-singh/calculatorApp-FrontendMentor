@@ -46,8 +46,10 @@ main{
   font-weight: 700;
   font-size: 2rem;
   height: 4rem;
+  padding: 1rem .5rem; 
   margin: .5rem;
   background: yellow;
+  text-align: right;
 }
 
 .keypad{
@@ -69,6 +71,17 @@ main{
   justify-content: center;
   align-items: center;
   border-radius: .5rem;
+  cursor: pointer;
+  border-bottom: solid 5px black;
+}
+
+.btn:hover{
+  border-bottom: solid 5px #888;
+}
+
+.btn:focus{
+  animation-name: clicked;
+  animation-duration: 0.5s;
 }
 
 .reset{
@@ -79,4 +92,11 @@ main{
 .equal{
   grid-column-start: 3;
   grid-column-end: 5;
+}
+
+@keyframes clicked {
+  0%   {border-bottom: solid 5px #888;}
+  25%  {border-bottom: solid 2px #444;}
+  50%  {border-bottom: solid 0 #888;}
+  100% {border-bottom: solid 5px #888;}
 }
