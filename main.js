@@ -1,5 +1,5 @@
 window.addEventListener("load", ()=>{
-  console.log("window loaded");
+
 
   const output = document.querySelector(".output");
 
@@ -14,6 +14,23 @@ window.addEventListener("load", ()=>{
   let num1 = ""
   let num2 = ""
   let lastEntry = ""
+
+  function  result() {
+    if(calc == "+"){
+      num1 = String(Number(num1) + Number(num2))
+    }else if(calc == "-"){
+      num1 = String(Number(num1) - Number(num2))
+    }else if(calc == "×"){
+      num1 = String(Number(num1) * Number(num2))
+    }else if(calc == "/"){
+      num1 = String(Number(num1) / Number(num2))
+    }
+    calc = ""
+    num2 = ""
+    lastEntry = "num1"
+    output.innerHTML = num1 + calc + num2
+  }
+
 
   numBtns.forEach((numBtn) => {
     numBtn.addEventListener("click", ()=>{
@@ -30,12 +47,22 @@ window.addEventListener("load", ()=>{
 
   calcBtns.forEach((calcBtn) => {
     calcBtn.addEventListener("click", ()=>{
-      if(num1 === ""){
-
+      if (num2 === ""){
+        if(num1 === ""){
+          if (calcBtn.dataset.value === "-"){
+            num1 += calcBtn.dataset.value
+            lastEntry = "num1"
+          }
+        }else{
+          calc = calcBtn.dataset.value
+          lastEntry = "calc"
+        }
       }else{
+        result()
         calc = calcBtn.dataset.value
         lastEntry = "calc"
       }
+
       output.innerHTML = num1 + calc + num2
     })
   });
@@ -58,20 +85,6 @@ window.addEventListener("load", ()=>{
     output.innerHTML = num1 + calc + num2
   })
 
-  equal.addEventListener("click", ()=>{
-    if(calc == "+"){
-      num1 = String(Number(num1) + Number(num2))
-    }else if(calc == "-"){
-      num1 = String(Number(num1) - Number(num2))
-    }else if(calc == "×"){
-      num1 = String(Number(num1) * Number(num2))
-    }else if(calc == "/"){
-      num1 = String(Number(num1) / Number(num2))
-    }
-    calc = ""
-    num2 = ""
-    lastEntry = "num1"
-    output.innerHTML = num1 + calc + num2
-  })
+  equal.addEventListener("click", result)
 
 })
