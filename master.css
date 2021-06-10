@@ -1,3 +1,23 @@
+:root{
+  --bg-main: hsl(222, 26%, 31%); /*  */
+  --bg-toggle: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+
+  --key-del-bg: hsl(225, 21%, 49%);
+  --key-del-shadow:  hsl(224, 28%, 35%);
+
+  --key-equal-bg: hsl(6, 63%, 50%);
+  --key-equal-shadow: hsl(6, 70%, 34%);
+
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  --text-pr: hsl(221, 14%, 31%);
+  --text-sec: hsl(0, 0%, 100%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+
 *{
   box-sizing: border-box;
 }
@@ -5,14 +25,17 @@
 body{
   margin: 0;
   font-family: 'Spartan', sans-serif;
+  background-color: var(--bg-main);
+  user-select: none;
 }
 
 main{
   display: flex;
   flex-direction: column;
-  background: red;
+  background-color: var(--bg-main);
   max-width: 450px;
-  margin: auto;
+  margin: 2rem auto;
+
 }
 
 .head{
@@ -21,6 +44,7 @@ main{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: var(--text-white);
 }
 
 .calc{
@@ -31,31 +55,53 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: yellow;
   font-size: 12px;
 }
 
 .toggle{
-  width: 50px;
-  height: 20px;
-  background-color: green;
+  width: 90px;
+  height: 30px;
+  background-color: var(--bg-toggle);
+  border-radius: 15px;
+  padding: 3px;
+  position: relative;
+}
 
+.toggle-switch{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--key-equal-bg);
+}
+
+
+
+.switcher{
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  left: 10px;
+  top: -30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
 }
 
 .output{
   font-weight: 700;
   font-size: 2rem;
   height: 4rem;
-  padding: 1rem .5rem; 
+  padding: 1rem .5rem;
   margin: .5rem;
-  background: yellow;
+  background-color: var(--bg-screen);
   text-align: right;
+  color: var(--text-white);
 }
 
 .keypad{
   padding: .5rem;
   margin: .5rem;
-  background: yellow;
+  background-color: var(--bg-toggle);
   font-weight: 700;
   font-size: 2rem;
   display: grid;
@@ -65,38 +111,66 @@ main{
 
 .btn{
   padding: .5rem;
-  background-color: white;
   margin: .5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: .5rem;
   cursor: pointer;
-  border-bottom: solid 5px black;
+}
+
+.num-btn, .calc-btn{
+  background-color: var(--key-bg);
+  color: var(--text-pr);
+  border-top: solid 5px var(--key-bg);
+  border-bottom: solid 5px var(--key-shadow);
+
 }
 
 .btn:hover{
-  border-bottom: solid 5px #888;
+  border-bottom: none;
+  border-top: none;
 }
 
+/*
 .btn:focus{
   animation-name: clicked;
   animation-duration: 0.5s;
+}
+*/
+
+.del{
+  background-color: var(--key-del-bg);
+  color: var(--text-white);
+  border-bottom: solid 5px var(--key-del-shadow);
+  font-size: 1.25rem;
+
 }
 
 .reset{
   grid-column-start: 1;
   grid-column-end: 3;
+  font-size: 1.25rem;
+  background-color: var(--key-del-bg);
+  color: var(--text-white);
+  border-bottom: solid 5px var(--key-del-shadow);
 }
 
 .equal{
   grid-column-start: 3;
   grid-column-end: 5;
+  font-size: 1.25rem;
+  background-color: var(--key-equal-bg);
+  color: var(--text-sec);
+  border-bottom: solid 5px var(--key-equal-shadow);
 }
 
+/*
 @keyframes clicked {
   0%   {border-bottom: solid 5px #888;}
   25%  {border-bottom: solid 2px #444;}
   50%  {border-bottom: solid 0 #888;}
   100% {border-bottom: solid 5px #888;}
 }
+
+*/
