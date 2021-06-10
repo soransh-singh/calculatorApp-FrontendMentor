@@ -14,10 +14,6 @@
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
@@ -26,12 +22,14 @@
       <div class="theme">
         <p>THEME</p>
 
-        <div class="toggle">
-          <div class="toggle-switch"></div>
+        <div class="container">
           <div class="switcher">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
+            <p class="theme-switch" data-theme="first">1</p>
+            <p class="theme-switch" data-theme="second">2</p>
+            <p class="theme-switch" data-theme="third">3</p>
+          </div>
+          <div class="toggle">
+            <div class="toggle-switch" ></div>
           </div>
         </div>
 
@@ -67,7 +65,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://soransh-singh.github.io/">Soransh Singh</a>.
   </div>
 </body>
 </html>
