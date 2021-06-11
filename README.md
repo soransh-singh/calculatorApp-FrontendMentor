@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/calculator-app-using-css-grid-vanilla-js-4AA4Af9IC)
+- Live Site URL: [Add live site URL here](https://calculator-app-tau.vercel.app/)
 
 ## My process
 first tried to write the HTML then worked on the layout after that added functionality so that simple calculation can be implemented and then made the switch that changes the theme.
