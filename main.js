@@ -21,13 +21,21 @@ window.addEventListener("load", ()=>{
   /*function to render result in output div*/
   function  result() {
     if(calc == "+"){
-      num1 = String(Number(num1) + Number(num2))
+      num1 = Number(num1) + Number(num2)
+      num1 = Math.round(num1 * 100000)/100000
+      num1 = String(num1)
     }else if(calc == "-"){
-      num1 = String(Number(num1) - Number(num2))
+      num1 = Number(num1) - Number(num2)
+      num1 = Math.round(num1 * 100000)/100000
+      num1 = String(num1)
     }else if(calc == "×"){
-      num1 = String(Number(num1) * Number(num2))
+      num1 = Number(num1) * Number(num2)
+      num1 = Math.round(num1 * 100000)/100000
+      num1 = String(num1)
     }else if(calc == "/"){
-      num1 = String(Number(num1) / Number(num2))
+      num1 = Number(num1) / Number(num2)
+      num1 = Math.round(num1 * 100000)/100000
+      num1 = String(num1)
     }
     calc = ""
     num2 = ""
@@ -142,7 +150,7 @@ window.addEventListener("load", ()=>{
   })
 
   function random(){
-    
+
   }
 
 
@@ -151,7 +159,7 @@ window.addEventListener("load", ()=>{
     numBtn.addEventListener("click", ()=>{
       if(calc ===""){
         if(numBtn.dataset.value ==="."){
-          if(/\W/.test(num1)){
+          if(/\./.test(num1)){
 
           }else{
             num1 += numBtn.dataset.value
@@ -163,7 +171,7 @@ window.addEventListener("load", ()=>{
         }
       }else{
         if(numBtn.dataset.value ==="."){
-          if(/\W/.test(num1)){
+          if(/\./.test(num2)){
 
           }else{
             num2 += numBtn.dataset.value
@@ -178,6 +186,7 @@ window.addEventListener("load", ()=>{
     })
   });
 
+  /* event listener to handle operator buttons */
   calcBtns.forEach((calcBtn) => {
     calcBtn.addEventListener("click", ()=>{
       if (num2 === ""){
@@ -190,10 +199,16 @@ window.addEventListener("load", ()=>{
           if(num1=== "-"){
 
           }else{
-            calc = calcBtn.dataset.value
-            lastEntry = "calc"
+            if((calc=== "×" || calc ==="/")&& calcBtn.dataset.value==="-"){
+              num2 += calcBtn.dataset.value
+              lastEntry = "num2"
+            }else{
+              calc = calcBtn.dataset.value
+              lastEntry = "calc"
+            }
           }
         }
+
       }else{
         result()
         calc = calcBtn.dataset.value
@@ -204,6 +219,7 @@ window.addEventListener("load", ()=>{
     })
   });
 
+  /* event listener to handle delete button */
   del.addEventListener("click", ()=>{
     if(lastEntry == "num1"){
       num1 = num1.slice(0, -1)
@@ -221,6 +237,7 @@ window.addEventListener("load", ()=>{
     output.innerHTML = num1 + calc + num2
   })
 
+  /* event listener to handle reset button */
   reset.addEventListener("click", ()=>{
     calc = ""
     num1 = ""
@@ -228,7 +245,7 @@ window.addEventListener("load", ()=>{
     output.innerHTML = num1 + calc + num2
   })
 
+  /* event listener to handle equal button */
   equal.addEventListener("click", result)
-
 
 })
