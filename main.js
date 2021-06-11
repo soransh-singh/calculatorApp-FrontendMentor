@@ -1,5 +1,8 @@
 window.addEventListener("load", ()=>{
 
+  /*added loader*/
+  const loader = document.querySelector(".loader")
+  loader.classList.add("hidden")
 
   const output = document.querySelector(".output");
 
@@ -127,20 +130,49 @@ window.addEventListener("load", ()=>{
   })
 
 
-  toggle.addEventListener("click", ()=>{
-    console.log("hello");
+  toggle.addEventListener("click", (e)=>{
+    console.log(e.offsetX);
+    if(toggleSwitchClass.contains("toggle-half")){
+      third()
+    } else if (toggleSwitchClass.contains("toggle-full")) {
+      first()
+    }else{
+      second()
+    }
   })
+
+  function random(){
+    
+  }
 
 
   /* event listener section Calculation Logic */
   numBtns.forEach((numBtn) => {
     numBtn.addEventListener("click", ()=>{
       if(calc ===""){
-        num1 += numBtn.dataset.value
-        lastEntry = "num1"
+        if(numBtn.dataset.value ==="."){
+          if(/\W/.test(num1)){
+
+          }else{
+            num1 += numBtn.dataset.value
+            lastEntry = "num1"
+          }
+        }else{
+          num1 += numBtn.dataset.value
+          lastEntry = "num1"
+        }
       }else{
-        num2 += numBtn.dataset.value
-        lastEntry = "num2"
+        if(numBtn.dataset.value ==="."){
+          if(/\W/.test(num1)){
+
+          }else{
+            num2 += numBtn.dataset.value
+            lastEntry = "num2"
+          }
+        }else{
+          num2 += numBtn.dataset.value
+          lastEntry = "num2"
+        }
       }
       output.innerHTML = num1 + calc + num2
     })
@@ -155,8 +187,12 @@ window.addEventListener("load", ()=>{
             lastEntry = "num1"
           }
         }else{
-          calc = calcBtn.dataset.value
-          lastEntry = "calc"
+          if(num1=== "-"){
+
+          }else{
+            calc = calcBtn.dataset.value
+            lastEntry = "calc"
+          }
         }
       }else{
         result()
@@ -171,11 +207,17 @@ window.addEventListener("load", ()=>{
   del.addEventListener("click", ()=>{
     if(lastEntry == "num1"){
       num1 = num1.slice(0, -1)
-    } else if(lastEntry == "num2"){
-      num2 = num2 .slice(0, -1)
     } else if(lastEntry == "calc"){
-      calc = calc.slice(0, -1)
-    }
+        calc = calc.slice(0, -1)
+        if(calc === ""){
+          lastEntry ="num1"
+        }
+      }else if(lastEntry == "num2"){
+        num2 = num2 .slice(0, -1)
+        if(num2 === ""){
+          lastEntry ="calc"
+        }
+      }
     output.innerHTML = num1 + calc + num2
   })
 
@@ -187,5 +229,6 @@ window.addEventListener("load", ()=>{
   })
 
   equal.addEventListener("click", result)
+
 
 })
