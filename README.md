@@ -46,8 +46,8 @@ first tried to write the HTML then worked on the layout after that added functio
 
 ### Continued development
 
-there can be still some logical error or bugs in the working of Calculator and switch have a room of improvement.
-
+- to make it PWA.
+- add preferred theme to be set as default.
 ## Author
 
 - Website - [Soransh Singh](https://soransh-singh.github.io/)
