@@ -1,11 +1,11 @@
 const filesToCache = [
   "/",
   "index.html",
-  "js/main.js",
-  "css/master.css"
+  "./js/main.js",
+  "./css/master.css"
 ];
 
-const staticCacheName = "http://127.0.0.1:8887";
+//const staticCacheName = "http://127.0.0.1:8887";
 
 // install event
 self.addEventListener("install", (event) => {
