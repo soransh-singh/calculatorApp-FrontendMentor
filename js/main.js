@@ -1,8 +1,5 @@
-window.addEventListener("load", ()=>{
 
-  /*added loader*/
-  const loader = document.querySelector(".loader")
-  loader.classList.add("hidden")
+window.addEventListener("load", ()=>{
 
   const output = document.querySelector(".output");
 
@@ -247,5 +244,17 @@ window.addEventListener("load", ()=>{
 
   /* event listener to handle equal button */
   equal.addEventListener("click", result)
+
+  /*added loader*/
+  const loader = document.querySelector(".loader")
+  loader.classList.add("hidden")
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("sw.js")
+      .then((registration) => console.log("yoo, Service worker registered"))
+      .catch((error) => console.log("Service worker not registered", error));
+  }
+
 
 })
