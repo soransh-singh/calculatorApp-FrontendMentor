@@ -193,7 +193,7 @@ window.addEventListener("load", ()=>{
             lastEntry = "num1"
           }
         }else{
-          if(num1=== "-" || num2==="-"){
+          if(num1=== "-" || ){
 
           }else{
             if((calc=== "×" || calc ==="/")&& calcBtn.dataset.value==="-"){
@@ -207,9 +207,13 @@ window.addEventListener("load", ()=>{
         }
 
       }else{
-        result()
-        calc = calcBtn.dataset.value
-        lastEntry = "calc"
+        if(num === "-"){
+
+        }else{
+          result()
+          calc = calcBtn.dataset.value
+          lastEntry = "calc"
+        }
       }
 
       output.innerHTML = num1 + calc + num2
