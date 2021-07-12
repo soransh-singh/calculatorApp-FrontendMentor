@@ -3,7 +3,7 @@
   "short_name": "calc",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#303030",
+  "background_color": "#3a4764",
   "theme_color": "#3a4764",
   "orientation": "portrait-primary",
   "icons": [

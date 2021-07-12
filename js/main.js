@@ -193,7 +193,7 @@ window.addEventListener("load", ()=>{
             lastEntry = "num1"
           }
         }else{
-          if(num1=== "-"){
+          if(num1=== "-" || num2==="-"){
 
           }else{
             if((calc=== "×" || calc ==="/")&& calcBtn.dataset.value==="-"){

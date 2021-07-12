@@ -58,8 +58,7 @@ main{
   flex-direction: column;
   background-color: var(--bg-main);
   max-width: 450px;
-  margin: 2rem auto;
-
+  margin: 6rem auto;
 }
 
 .head{
@@ -206,6 +205,12 @@ main{
   background-color: var(--key-equal-bg);
   color: var(--text-sec);
   border-bottom: solid 5px var(--key-equal-shadow);
+}
+
+@media(min-width-650px){
+  main{
+    margin: 2rem auto;
+  }
 }
 
 .attribution { font-size: 11px; text-align: center; color: var(--text-ter)}
