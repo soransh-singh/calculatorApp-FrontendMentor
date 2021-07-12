@@ -46,13 +46,6 @@ body{
   animation-fill-mode: forwards;
 }
 
-@keyframes fadeout {
-    100%{
-      visibility: hidden;
-      opacity: 0;
-    }
-}
-
 main{
   display: flex;
   flex-direction: column;
@@ -207,15 +200,21 @@ main{
   border-bottom: solid 5px var(--key-equal-shadow);
 }
 
-@media(min-width-650px){
+.attribution { font-size: 11px; text-align: center; color: var(--text-ter)}
+.attribution a { font-size: 14px; color: inherit;}
+
+@media (min-width: 750px) {
   main{
     margin: 2rem auto;
   }
 }
 
-.attribution { font-size: 11px; text-align: center; color: var(--text-ter)}
-.attribution a { font-size: 14px; color: inherit;}
-
+@keyframes fadeout {
+    100%{
+      visibility: hidden;
+      opacity: 0;
+    }
+}
 
 @keyframes clicked {
   0%   {border-top: solid 0 var(--bg-toggle); border-bottom: solid 5px var(--bg-toggle);}
