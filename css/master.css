@@ -51,7 +51,7 @@ main{
   flex-direction: column;
   background-color: var(--bg-main);
   max-width: 450px;
-  margin: 6rem auto;
+  margin: 4rem auto;
 }
 
 .head{
