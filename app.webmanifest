@@ -7,7 +7,6 @@
   "background_color": "#182034",
   "theme_color": "#3a4764",
   "orientation": "portrait-primary",
-  "description": "A smple calculator app for your daily use.",
   "icons": [
   {
     "src": "manifest-icon-512.png",
@@ -20,5 +19,25 @@
     "sizes": "512x512",
     "type": "image/png"
   }
+],
+
+"description": "A smple calculator app for your daily use.",
+"screenshot": [
+  {
+    "src": "screenshot/phone-ss-1.png",
+    "sizes": "514x914",
+    "type": "image/png"
+  },
+  {
+    "src": "screenshot/phone-ss-2.png",
+    "sizes": "514x914",
+    "type": "image/png"
+  },
+  {
+    "src": "screenshot/phone-ss-3.png",
+    "sizes": "514x914",
+    "type": "image/png"
+  }
 ]
+  
 }
