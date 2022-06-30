@@ -1,8 +1,8 @@
 const filesToCache = [
   "/",
-  "index.html",
-  "./js/main.js",
-  "./css/master.css"
+  "js/main.js",
+  "css/master.css",
+  "https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
 ];
 
 //const staticCacheName = "http://127.0.0.1:8887";

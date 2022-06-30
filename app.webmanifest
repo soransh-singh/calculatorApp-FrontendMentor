@@ -1,23 +1,24 @@
 {
   "name": "calculator",
   "short_name": "calc",
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
+  "scope": "/",
   "background_color": "#182034",
   "theme_color": "#3a4764",
   "orientation": "portrait-primary",
+  "description": "A smple calculator app for your daily use.",
   "icons": [
-  {
-    "src": "manifest-icon-192.png",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "maskable any"
-  },
   {
     "src": "manifest-icon-512.png",
     "sizes": "512x512",
     "type": "image/png",
-    "purpose": "maskable any"
+    "purpose": "maskable"
+  },
+  {
+    "src": "manifest-icon-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
   }
 ]
 }
